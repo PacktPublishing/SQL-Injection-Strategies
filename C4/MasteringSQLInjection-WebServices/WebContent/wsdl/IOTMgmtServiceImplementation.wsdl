@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.masteringsqlj.packt.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.masteringsqlj.packt.com" xmlns:intf="http://service.masteringsqlj.packt.com" xmlns:tns1="http://models.masteringsqlj.packt.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.masteringsqlj.packt.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://models.masteringsqlj.packt.com"/>
+   <element name="getDevice">
+    <complexType>
+     <sequence>
+      <element name="user_id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDeviceResponse">
+    <complexType>
+     <sequence>
+      <element name="getDeviceReturn" type="tns1:IOTDevice"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStatus">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="setStatusReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUser">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getUserReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeIOTStatus">
+    <complexType>
+     <sequence>
+      <element name="user_id" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeIOTStatusResponse">
+    <complexType/>
+   </element>
+   <element name="addUser">
+    <complexType>
+     <sequence>
+      <element name="user" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUserResponse">
+    <complexType/>
+   </element>
+   <element name="addDevice">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="name" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+      <element name="user_id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addDeviceResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://models.masteringsqlj.packt.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="IOTDevice">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="user_id" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="User">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="user_id" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addUserResponse">
+
+      <wsdl:part element="impl:addUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDeviceResponse">
+
+      <wsdl:part element="impl:getDeviceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStatusRequest">
+
+      <wsdl:part element="impl:setStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserRequest">
+
+      <wsdl:part element="impl:getUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDeviceRequest">
+
+      <wsdl:part element="impl:addDevice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStatusResponse">
+
+      <wsdl:part element="impl:setStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUserRequest">
+
+      <wsdl:part element="impl:addUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDeviceResponse">
+
+      <wsdl:part element="impl:addDeviceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeIOTStatusResponse">
+
+      <wsdl:part element="impl:changeIOTStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserResponse">
+
+      <wsdl:part element="impl:getUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDeviceRequest">
+
+      <wsdl:part element="impl:getDevice" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeIOTStatusRequest">
+
+      <wsdl:part element="impl:changeIOTStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IOTMgmtServiceImplementation">
+
+      <wsdl:operation name="getDevice">
+
+         <wsdl:input message="impl:getDeviceRequest" name="getDeviceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDeviceResponse" name="getDeviceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStatus">
+
+         <wsdl:input message="impl:setStatusRequest" name="setStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setStatusResponse" name="setStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUser">
+
+         <wsdl:input message="impl:getUserRequest" name="getUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUserResponse" name="getUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeIOTStatus">
+
+         <wsdl:input message="impl:changeIOTStatusRequest" name="changeIOTStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeIOTStatusResponse" name="changeIOTStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUser">
+
+         <wsdl:input message="impl:addUserRequest" name="addUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addUserResponse" name="addUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDevice">
+
+         <wsdl:input message="impl:addDeviceRequest" name="addDeviceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addDeviceResponse" name="addDeviceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IOTMgmtServiceImplementationSoapBinding" type="impl:IOTMgmtServiceImplementation">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getDevice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDeviceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDeviceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeIOTStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeIOTStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeIOTStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDevice">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addDeviceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addDeviceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IOTMgmtServiceImplementationService">
+
+      <wsdl:port binding="impl:IOTMgmtServiceImplementationSoapBinding" name="IOTMgmtServiceImplementation">
+
+         <wsdlsoap:address location="http://localhost:8085/MasteringSQLInjection-WebServices/services/IOTMgmtServiceImplementation"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
