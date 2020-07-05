@@ -1,2 +1,2 @@
-# SQL-Injection-Attack-and-Defense-Strategies
-SQL Injection – Attack and Defense Strategies, published by Packt
+# SQL-Injection-Strategies
+SQL Injection Strategies, published by Packt
